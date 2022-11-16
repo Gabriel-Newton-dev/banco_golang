@@ -21,6 +21,16 @@ func (d *DadosConta) Sacar(valorDoSaque float64) string {
 	return ""
 }
 
+func (d *DadosConta) Deposito(valorDoDeposito float64) (string, float64, string) {
+	if valorDoDeposito > 0 {
+		d.Saldo += valorDoDeposito
+		return "Deposito realizado com sucesso R$", d.Saldo, "reais"
+	} else {
+		return "Não é possível fazer deposito com valor negativo, seu saldo atual é de R$", d.Saldo, "Reais"
+	}
+
+}
+
 func main() {
 
 	PrimeiroCliente := DadosConta{"Guilherme Dias", 589, 123456, 12500}
@@ -48,10 +58,9 @@ func main() {
 
 	contaDasilvia := DadosConta{}
 	contaDasilvia.Titular = "Silvia"
-	contaDasilvia.Saldo = 500.
+	contaDasilvia.Saldo = 500
 
-	contaDasilvia.Sacar(-600)
-	PrimeiroCliente.Sacar(200)
-	SegundoCliente.Sacar(500)
+	fmt.Println(contaDasilvia.Deposito(1000))
+	fmt.Println(contaDasilvia.Sacar(100))
 
 }
