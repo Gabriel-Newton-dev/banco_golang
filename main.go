@@ -31,6 +31,16 @@ func (d *DadosConta) Deposito(valorDoDeposito float64) (string, float64, string)
 
 }
 
+func (d *DadosConta) tranferencia(valorDaTransferencia float64, contaDestino *DadosConta) bool {
+	if valorDaTransferencia < d.Saldo {
+		d.Saldo -= valorDaTransferencia
+		contaDestino.Deposito((valorDaTransferencia))
+		return true
+	} else {
+		return false
+	}
+}
+
 func main() {
 
 	PrimeiroCliente := DadosConta{"Guilherme Dias", 589, 123456, 12500}
@@ -61,6 +71,12 @@ func main() {
 	contaDasilvia.Saldo = 500
 
 	fmt.Println(contaDasilvia.Deposito(1000))
-	fmt.Println(contaDasilvia.Sacar(100))
+	//fmt.Println(contaDasilvia.Sacar(100))
+
+	tranferir := contaDasilvia.tranferencia(1000, &PrimeiroCliente)
+	fmt.Println(tranferir)
+
+	fmt.Printf("O Saldo atualizado de %v é de R$ %v Reais\n", contaDasilvia.Titular, contaDasilvia.Saldo)
+	fmt.Printf("O Saldo atualizado de %s é de R$ %v Reais\n", PrimeiroCliente.Titular, PrimeiroCliente.Saldo)
 
 }
