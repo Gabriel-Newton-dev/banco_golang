@@ -53,11 +53,9 @@ func main() {
 	contaDasilvia.Saldo = 500
 
 	fmt.Println(contaDasilvia.Deposito(1000))
-	//fmt.Println(contaDasilvia.Sacar(100))
 
 	contaDasilvia.Tranferencia(1000, &PrimeiroCliente)
 
-	fmt.Printf("O Saldo atualizado de %v é de R$ %v Reais\n", contaDasilvia.Titular, contaDasilvia.Saldo)
-	fmt.Printf("O Saldo atualizado de %s é de R$ %v Reais\n", PrimeiroCliente.Titular, PrimeiroCliente.Saldo)
-
+	contaDasilvia.ObterSaldo()
+	PrimeiroCliente.ObterSaldo()
 }
