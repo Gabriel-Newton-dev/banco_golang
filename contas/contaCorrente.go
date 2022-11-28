@@ -31,12 +31,24 @@ func (d *DadosConta) Deposito(valorDoDeposito float64) (string, float64, string)
 
 }
 
-func (d *DadosConta) Tranferencia(valorDaTransferencia float64, contaDestino *DadosConta) bool {
+func (d *DadosConta) Tranferencia(valorDaTransferencia float64, contaDestino *DadosConta) {
 	if valorDaTransferencia < d.Saldo {
 		d.Saldo -= valorDaTransferencia
 		contaDestino.Deposito((valorDaTransferencia))
-		return true
+		fmt.Printf("Transferência realizada com sucesso no valor de R$ %v Reais, para a conta de %s.\n", valorDaTransferencia, contaDestino.Titular)
 	} else {
-		return false
+		fmt.Println("Transferência não realizada, favor verificar os dados.")
 	}
 }
+
+// func (d *DadosConta) Transferencia(valorDaTransferencia float64, contaDestino *DadosConta) {
+// 	podeTransferir := d.Saldo > valorDaTransferencia && valorDaTransferencia > 0
+// 	if podeTransferir {
+// 		d.Saldo -= valorDaTransferencia
+// 		contaDestino.Saldo += valorDaTransferencia
+// 		fmt.Printf("Transferência realizada com sucesso no valor de R$ %v Reais, para a conta de %s.\n", valorDaTransferencia, contaDestino.Titular)
+// 	} else {
+// 		fmt.Println("Transferência não realizada, favor verificar os dados.")
+// 	}
+
+// }

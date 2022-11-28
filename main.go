@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"./contas"
+	"github.com/Gabriel-Newton-dev/banco_golang/contas"
 )
 
 func main() {
@@ -48,8 +48,7 @@ func main() {
 	fmt.Println(contaDasilvia.Deposito(1000))
 	//fmt.Println(contaDasilvia.Sacar(100))
 
-	tranferir := contaDasilvia.Tranferencia(1000, &PrimeiroCliente)
-	fmt.Println(tranferir)
+	contaDasilvia.Tranferencia(1000, &PrimeiroCliente)
 
 	fmt.Printf("O Saldo atualizado de %v é de R$ %v Reais\n", contaDasilvia.Titular, contaDasilvia.Saldo)
 	fmt.Printf("O Saldo atualizado de %s é de R$ %v Reais\n", PrimeiroCliente.Titular, PrimeiroCliente.Saldo)
