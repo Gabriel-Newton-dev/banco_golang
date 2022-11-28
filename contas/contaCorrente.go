@@ -1,12 +1,16 @@
 package contas
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/Gabriel-Newton-dev/banco_golang/clientes"
+)
 
 type DadosConta struct {
-	Titular string  `json:"Titular"`
-	Agencia int     `json:"Agência"`
-	Conta   int     `json:"Conta"`
-	Saldo   float64 `json:"Saldo"`
+	Titular clientes.Titular `json:"Titular"`
+	Agencia int              `json:"Agência"`
+	Conta   int              `json:"Conta"`
+	Saldo   float64          `json:"Saldo"`
 }
 
 func (d *DadosConta) Sacar(valorDoSaque float64) string {
