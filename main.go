@@ -12,28 +12,28 @@ import (
 func main() {
 
 	PrimeiroCliente := contas.DadosConta{
-		Titular: clientes.Titular{"Guilherme Dias", "123.456.789-00", "Médico"},
+		Titular: clientes.Titular{Nome: "Guilherme Dias", CPF: "123.456.789-00", Profissao: "Médico"},
 		Agencia: 589,
 		Conta:   123456,
 		Saldo:   12500,
 	}
 
 	SegundoCliente := contas.DadosConta{
-		Titular: clientes.Titular{"Luciene Silva", "345.678.907-56", "Do lar"},
+		Titular: clientes.Titular{Nome: "Luciene Silva", CPF: "345.678.907-56", Profissao: "Do lar"},
 		Agencia: 589,
 		Conta:   111233,
 		Saldo:   489.90,
 	}
 
 	TerceiroCliente := contas.DadosConta{
-		Titular: clientes.Titular{"Diego Chaves", "234.123.432-09", "Vendedor"},
+		Titular: clientes.Titular{Nome: "Diego Chaves", CPF: "234.123.432-09", Profissao: "Vendedor"},
 		Agencia: 589,
 		Conta:   543678,
 		Saldo:   9890.76,
 	}
 
 	QuartoCliente := contas.DadosConta{
-		Titular: clientes.Titular{"Bruna Silva", "259.696.696-56", "Secretária"},
+		Titular: clientes.Titular{Nome: "Bruna Silva", CPF: "259.696.696-56", Profissao: "Secretária"},
 		Agencia: 289,
 		Conta:   111223,
 		Saldo:   87672.90,
@@ -49,7 +49,7 @@ func main() {
 	fmt.Println(QuartoCliente)
 
 	contaDasilvia := contas.DadosConta{}
-	contaDasilvia.Titular = clientes.Titular{"Silvia", "345.383.898-90", "Desenvolvedora"}
+	contaDasilvia.Titular = clientes.Titular{Nome: "Silvia", CPF: "345.383.898-90", Profissao: "Desenvolvedora"}
 	contaDasilvia.Saldo = 500
 
 	fmt.Println(contaDasilvia.Deposito(1000))
