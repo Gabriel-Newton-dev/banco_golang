@@ -45,14 +45,6 @@ func (d *DadosConta) Tranferencia(valorDaTransferencia float64, contaDestino *Da
 	}
 }
 
-// func (d *DadosConta) Transferencia(valorDaTransferencia float64, contaDestino *DadosConta) {
-// 	podeTransferir := d.Saldo > valorDaTransferencia && valorDaTransferencia > 0
-// 	if podeTransferir {
-// 		d.Saldo -= valorDaTransferencia
-// 		contaDestino.Saldo += valorDaTransferencia
-// 		fmt.Printf("Transferência realizada com sucesso no valor de R$ %v Reais, para a conta de %s.\n", valorDaTransferencia, contaDestino.Titular)
-// 	} else {
-// 		fmt.Println("Transferência não realizada, favor verificar os dados.")
-// 	}
-
-// }
+func (d *DadosConta) ObterSaldo() {
+	fmt.Printf("SR(a) %v o seu saldo é de R$ %v Reais.\n", d.Titular, d.Saldo)
+}
