@@ -3,46 +3,41 @@ package main
 import (
 	"fmt"
 
+	"github.com/Gabriel-Newton-dev/banco_golang/clientes"
 	"github.com/Gabriel-Newton-dev/banco_golang/contas"
 )
 
 func main() {
 
-	PrimeiroCliente := contas.DadosConta{
-		Titular: "Guilherme Dias",
-		Agencia: 589,
-		Conta:   123456,
-		Saldo:   12500,
-	}
+	DadosCliente.PrimeiroCliente
 
 	SegundoCliente := contas.DadosConta{
-		Titular: "Luciene Silva",
+		Titular: clientes.Titular{"Luciene Silva", "345.678.907-56", "Do lar"},
 		Agencia: 589,
 		Conta:   111233,
 		Saldo:   489.90,
 	}
 
 	TerceiroCliente := contas.DadosConta{
-		Titular: "Diego Chaves",
+		Titular: clientes.Titular{"Diego Chaves", "234.123.432-09", "Vendedor"},
 		Agencia: 589,
 		Conta:   543678,
 		Saldo:   9890.76,
 	}
 
 	QuartoCliente := contas.DadosConta{
-		Titular: "Bruna Silva",
+		Titular: clientes.Titular{"Bruna Silva", "259.696.696-56", "Secretária"},
 		Agencia: 289,
 		Conta:   111223,
 		Saldo:   87672.90,
 	}
 
-	fmt.Println(PrimeiroCliente)
 	fmt.Println(SegundoCliente)
 	fmt.Println(TerceiroCliente)
 	fmt.Println(QuartoCliente)
 
 	contaDasilvia := contas.DadosConta{}
-	contaDasilvia.Titular = "Silvia"
+	contaDasilvia.Titular = clientes.Titular{"Silvia", "345.383.898-90", "Desenvolvedora"}
 	contaDasilvia.Saldo = 500
 
 	fmt.Println(contaDasilvia.Deposito(1000))
