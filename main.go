@@ -58,4 +58,20 @@ func main() {
 
 	contaDasilvia.ObterSaldo()
 	PrimeiroCliente.ObterSaldo()
+
+	ContaDoDenis := contas.ContaPoupanca{
+		Titular: clientes.Titular{
+			Nome:      "Carlos Denis",
+			CPF:       "432-543-323-76",
+			Profissao: "Técnico de Informática",
+		},
+		NumeroAgencia: 256,
+		NumeroConta:   7860,
+		Operacao:      1,
+		Saldo:         356,
+	}
+
+	ContaDoDenis.Depositar(100)
+	ContaDoDenis.Sacar(300)
+	ContaDoDenis.ValorDoSaldo()
 }
