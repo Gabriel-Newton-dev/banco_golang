@@ -9,6 +9,14 @@ import (
 	"github.com/Gabriel-Newton-dev/banco_golang/contas"
 )
 
+func PagarBoleto(conta VerficarConta, valorDoBoleto float64) {
+	conta.Sacar(valorDoBoleto)
+}
+
+type VerficarConta interface {
+	Sacar(valor float64)
+}
+
 func main() {
 
 	PrimeiroCliente := contas.DadosConta{
@@ -74,4 +82,5 @@ func main() {
 	ContaDoDenis.Depositar(100)
 	ContaDoDenis.Sacar(300)
 	ContaDoDenis.ValorDoSaldo()
+	PagarBoleto(&ContaDoDenis, 20)
 }

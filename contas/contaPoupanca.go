@@ -30,7 +30,9 @@ func (c *ContaPoupanca) Sacar(ValorDoSaque float64) {
 	podeSacar := c.Saldo >= ValorDoSaque && ValorDoSaque > 0
 	if podeSacar {
 		c.Saldo -= ValorDoSaque
-		fmt.Printf("Sr(a) %s  seu saque no valor de R$ %v Reais foi realizado com sucesso, seu saldo atual agora é de R$ %v Reais.\n", c.Titular.Nome, ValorDoSaque, c.Saldo)
+		fmt.Printf("Sr(a) %s seu saques no valor de R$ %v Reais foi realizado com sucesso, seu saldo atual agora é de R$ %v Reais.\n", c.Titular.Nome, ValorDoSaque, c.Saldo)
+	} else {
+		fmt.Println("Saque não realizado.")
 	}
 }
 
